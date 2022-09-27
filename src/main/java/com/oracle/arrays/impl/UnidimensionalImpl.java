@@ -20,6 +20,17 @@ public class UnidimensionalImpl implements Unidimensional {
 
     @Override
     public int[] ordenamientoReversa(int[] arr) {
-        return null;
+        int tempNum = 0;
+
+        for(int i = 0; i < arr.length; i++) {
+            for(int j = i+1; j < arr.length; j++) {
+                if(arr[j] > arr[i]) {
+                    tempNum = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = tempNum;
+                }
+            }
+        }
+        return arr;
     }
 }
