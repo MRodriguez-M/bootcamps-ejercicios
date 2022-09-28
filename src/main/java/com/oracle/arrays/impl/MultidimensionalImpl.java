@@ -21,6 +21,12 @@ public class MultidimensionalImpl implements Multidimensional {
 
     @Override
     public String getData(String[][] datos, Posicion posicion) {
-        return null;
+        String dato = "";
+        int x = posicion.getX();
+        int y = posicion.getY();
+        
+        dato = datos[x][y];
+        
+        return dato;
     }
 }
