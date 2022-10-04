@@ -22,6 +22,7 @@ public class DynamicArrayListImpl implements DynamicArrayList {
         }
 
         arr[idx] = element;
+        idx++;
     }
 
     @Override
@@ -31,17 +32,24 @@ public class DynamicArrayListImpl implements DynamicArrayList {
 
     @Override
     public int get(int index) {
-        return 0;
+        int elementVal = arr[index];
+        
+        return elementVal;
     }
 
     @Override
     public void resize() {
-
+        int[] temp = new int[idx+1];
+        for(int i = 0; i < arr.length; i++) {
+          temp[i] = arr[i];
+        }
+        
+        arr = temp;
     }
 
     @Override
     public void resize(int newSize) {
-
+        
     }
 
     @Override
