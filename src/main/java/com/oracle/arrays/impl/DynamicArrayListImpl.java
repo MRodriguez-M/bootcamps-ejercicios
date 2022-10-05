@@ -27,7 +27,7 @@ public class DynamicArrayListImpl implements DynamicArrayList {
 
     @Override
     public void remove(int index) {
-
+        arr[index] = 0;
     }
 
     @Override
@@ -54,6 +54,14 @@ public class DynamicArrayListImpl implements DynamicArrayList {
 
     @Override
     public int length() {
-        return 0;
+        int count = 0;
+        
+        for(int i = 0; i < arr.length; i++) {
+            if(arr[i] != 0) {
+                count++;
+            }
+        }
+        
+        return count;
     }
 }
